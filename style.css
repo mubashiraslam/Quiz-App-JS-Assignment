@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
 body{
-    font-family: ;
+    font-family: 'Mulish';
 }
 
 #main{
@@ -15,7 +16,7 @@ body{
     height: 100% !important;
     width: 50% !important;
     background-color: white;
-    color: rgb(77, 77, 240);
+    color: #222233;
 }
 
 #left h1{
@@ -45,19 +46,88 @@ body{
 
 #left p{
     font-size: 20px;
+    font-family: 'Mulish';
 }
 
 #right{
-    padding: 12% 8%;
-    background-color: black;
-    color: rgb(77, 77, 240);
+    padding: 17% 8%;
+    /* background-color: #5E747F; */
+    background-color: #222233;
+    color: #AACCFF;
     height: 100% !important;
     width: 50% !important;
     text-align: center;
+    font-family: 'Mulish';
 }
 
 #right h1{
     font-family: 'Abril Fatface';
     font-size: 60px;
     line-height: 1em;
+}
+
+#name{
+    margin : 30px auto 10px auto;
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    background-color: #222233;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    border: none;
+    border-bottom: 1px solid #AACCFF;
+    text-align: center;
+}
+
+#right button{
+    margin-top: 30px;
+    width: 80%;
+    height: 45px;
+    font-size: 25px;
+    background-color: #AACCFF;
+    color: #222233;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+#questionRight{
+    padding: 12% 8%;
+    background-color: #222233;
+    color: #AACCFF;
+    height: 100% !important;
+    width: 50% !important;
+    text-align: center;
+    font-family: 'Mulish';
+}
+
+#questionRight h1{
+    font-family: 'Abril Fatface';
+    font-size: 60px;
+    line-height: 1em;
+}
+
+#questionRight h4{
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#questionRight label{
+    padding-left: 20px;
+    font-size: 23px;
+}
+
+#questionRight button{
+    margin-top: 30px;
+    width: 80%;
+    height: 45px;
+    font-size: 25px;
+    background-color: #AACCFF;
+    color: #222233;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 0.1em;
 }

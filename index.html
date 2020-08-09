@@ -8,24 +8,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-    <!-- <h1>Quiz Application</h1>
-    <p>A Quiz Application made by Muhammad Mubashir Aslam Roll No. WM7971 <br> for Web & Mobile Hybrid App Development course by SMIT.</p> -->
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-6" id="left">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" id="left">
                 <h1 id="welcome">Welcome!</h1>
                 <h1>To Our <br> Quiz App</h1> <br>
                 <p>A Quiz Application made by <b> Muhammad Mubashir Aslam </b> Roll No. WM7971 for Web & Mobile Hybrid App Development course by SMIT.</p>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-6" id="right">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" id="right">
                 <h1>Start The Quiz.</h1>
-                <div>
+                    <input type="text" id="name" placeholder="Your name here" required="required">
                     <h4>Enter Your Name</h4>
-                </div>
+                    <button onclick="startQuiz()">START</button>
             </div>
         </div>
     </div>
 
 </body>
+<script src="app.js"></script>
 </html>
