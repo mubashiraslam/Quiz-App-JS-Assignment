@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+body{
+    font-family: ;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#left{
+    padding: 12% 10%;
+    height: 100% !important;
+    width: 50% !important;
+    background-color: white;
+    color: rgb(77, 77, 240);
+}
+
+#left h1{
+    font-family: 'Abril Fatface';
+    font-size: 95px;
+    line-height: 1em;
+}
+
+#welcome{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .05em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .05em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+#left p{
+    font-size: 20px;
+}
+
+#right{
+    padding: 12% 8%;
+    background-color: black;
+    color: rgb(77, 77, 240);
+    height: 100% !important;
+    width: 50% !important;
+    text-align: center;
+}
+
+#right h1{
+    font-family: 'Abril Fatface';
+    font-size: 60px;
+    line-height: 1em;
+}
