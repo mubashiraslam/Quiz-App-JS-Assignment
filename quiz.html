@@ -13,12 +13,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" id="left">
-                <h1 id="welcome">Welcome!</h1>
-                <h1>To Our <br> Quiz App</h1> <br>
+                <h1 id="welcome">Start!</h1>
+                <h1>Best Of <br> Luck</h1> <br>
                 <p>A Quiz Application made by <b> Muhammad Mubashir Aslam </b> Roll No. WM7971 for Web & Mobile Hybrid App Development course by SMIT.</p>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" id="questionRight">
-                <h1 id="qNumber"></h1><small>(out of 10)</small>
+                <h1 id="qNumber"></h1><p>(out of 10)</p>
                     <h4 id="question"></h4>
                     <input id="option1" name="answer" type="radio" required>
                     <label for="option1" class="options"></label> <br>
@@ -29,6 +29,7 @@
                     <input id="option4" name="answer" type="radio" required>
                     <label for="option4" class="options"></label> <br>
                     <button onclick="nextQuestion(this)">NEXT QUESTION</button>
+                    <button id="submitBtn" onclick="submitQuiz()">SUBMIT QUIZ</button>
             </div>
         </div>
     </div>

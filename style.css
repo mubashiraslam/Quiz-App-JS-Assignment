@@ -131,3 +131,43 @@ body{
     font-weight: bold;
     letter-spacing: 0.1em;
 }
+
+#resultRight{
+    padding: 20% 8%;
+    background-color: #222233;
+    color: #AACCFF;
+    height: 100% !important;
+    width: 50% !important;
+    text-align: center;
+    font-family: 'Mulish';
+}
+
+#resultRight h1{
+    font-family: 'Abril Fatface';
+    font-size: 60px;
+    line-height: 1em;
+}
+
+#resultRight h4{
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+.loader {
+    margin: 50px auto;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

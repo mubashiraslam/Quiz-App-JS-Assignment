@@ -1,3 +1,4 @@
+var name;
 var score=0;
 var totalQuestions=10;
 var currentQN=0;
@@ -33,14 +34,40 @@ var questions = [
         answer : "Karachi",
         options : ["Chashma", "Karachi", "Mianwali", "None of these"]
     },
+    {
+        question : "Which desert is locted in Eastern part of Punjab?",
+        answer : "Cholistan Desert",
+        options : ["Thal Desert", "Cholistan Desert", "Kharan Desert", "Thar Desert"]
+    },
+    {
+        question : "What was the old name of PIA?",
+        answer : "Orient Airways",
+        options : ["Independence Airways", "Orient Airways", "Kolachi Airways", "Air Pakistan"]
+    },
+    {
+        question : "What official name was given to Pakistan in 1956 constitution?",
+        answer : "Islamic Republic of Pakistan",
+        options : ["Islamic Pakistan", "Islamic Republic of Pakistan", "Republic of Pakistan", "United States of Pakistan"]
+    },
+    {
+        question : "Who was the Prime Minister of Pakistan during enforcement of first constitution?",
+        answer : "Choudhry Mohammad Ali",
+        options : ["Khuwaja Nazim Uddin", "Muhammad Ali Bogra", "Ibrahim Ismail Chundrigar", "Choudhry Mohammad Ali"]
+    }
 ]
 
 function startQuiz(){
-    var name = document.getElementById("name");
-    window.location.href = "quiz.html"
+    var sName = document.getElementById("name");
+    if(sName.value == ""){
+        alert("Please Enter Your Name To Start Quiz")
+    } else window.location.href = "quiz.html";
+    name = sName.value;
 }
 
 function showQuestions(n){
+    var submitBtn = document.getElementById("submitBtn");
+    submitBtn.style.display = "none"
+
     //Putting Question Number
     var QN = n+1;
     var qNumber = document.getElementById("qNumber");
@@ -71,16 +98,100 @@ function checkAnswer(c){
             break;
         }
     }
+    var tempScore=0;
     if(options[checked].innerHTML == questions[c].answer){
-        score++;
+        tempScore++;
     }
+    setScore(tempScore);
+}
+function setScore(ss){
+    score += ss;
+}
+function getScore(){
+    return score;
 }
 
 function nextQuestion(e){
-    checkAnswer(currentQN-1);
+    var radioBtns = [document.getElementById("option1"), document.getElementById("option2"), document.getElementById("option3"), document.getElementById("option4")]
+    var tempChecked=0;
+    for(var i=0;i<radioBtns.length;i++){
+        if(radioBtns[i].checked == false){
+            tempChecked++;
+        }
+    }
+    if(tempChecked == 4){
+        alert("Please select an option");
+    } else { checkAnswer(currentQN-1);
+
+    //Clear Radio Buttons
+    for(var i=0;i<radioBtns.length;i++){
+        radioBtns[i].checked = false;
+    }
+
     showQuestions(currentQN);
-    // if(currentQN == 2){
-    //     console.log(e)
-    //     nextBtn.disabled = false;
-    // }
+
+    //Show Submit Button When Question Completed
+    if(currentQN == 10){
+        e.style.display = "none";
+        submitBtn.style.display = "inline-block"
+    }
+    console.log(score)
+    }
+}
+
+function submitQuiz(){
+    var radioBtns = [document.getElementById("option1"), document.getElementById("option2"), document.getElementById("option3"), document.getElementById("option4")]
+    var tempChecked=0;
+    for(var i=0;i<radioBtns.length;i++){
+        if(radioBtns[i].checked == false){
+            tempChecked++;
+        }
+    }
+    if(tempChecked == 4){
+        alert("Please select an option");
+    } else window.location.href = "result.html";
+}
+
+var loader = document.getElementById("loader");
+var checking = document.getElementById("checking");
+
+var actualResult = document.getElementById("actualResult");
+
+var startAnimation;
+var stopAnimation;
+
+function checkAnimation(){
+    actualResult.style.display = "none";
+    //Animation Function
+    function checkingAnimation(){
+        loader.style.display = "block";
+        checking.style.display = "block"
+        checking.innerHTML += "."
+    }
+
+    //Start Animation
+    startAnimation = setInterval(checkingAnimation, 1000)
+    
+    //Calling Show Result Function
+    stopAnimation = setTimeout(showActualResult, 5000)
+}
+
+function showActualResult(){
+    //Stop Animation
+    clearInterval(startAnimation);
+    
+    //Remove the checking animation
+    loader.style.display = "none";
+    checking.style.display = "none";
+
+    //Display actual result
+    var resultName = document.getElementById("resultName")
+    var resultScore = document.getElementById("resultScore")
+
+    resultScore.innerHTML = getScore();
+    resultName.innerHTML = name;
+    console.log(getScore());
+
+    actualResult.style.display = "block";
+    clearTimeout(stopAnimation);
 }

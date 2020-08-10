@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Quiz Result</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body onload="checkAnimation()">
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" id="left">
+                <h1 id="welcome">Result!</h1>
+                <h1>Check Your <br> Score</h1> <br>
+                <p>A Quiz Application made by <b> Muhammad Mubashir Aslam </b> Roll No. WM7971 for Web & Mobile Hybrid App Development course by SMIT.</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" id="resultRight">
+                <h1 id="RHeading">Your Quiz Score</h1>
+                    <div id="actualResult">
+                        <h4>Dear <span id="resultName">(Name)</span></h4>
+                        <h3>Your Total Score is <span id="resultScore">0</span></h3>
+                        <p>Out of 10</p>
+                    </div>
+                    <div id="loader" class="loader"></div>
+                    <h4 id="checking">Checking</h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
