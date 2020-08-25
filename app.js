@@ -98,17 +98,9 @@ function checkAnswer(c){
             break;
         }
     }
-    var tempScore=0;
     if(options[checked].innerHTML == questions[c].answer){
-        tempScore++;
+        score++;
     }
-    setScore(tempScore);
-}
-function setScore(ss){
-    score += ss;
-}
-function getScore(){
-    return score;
 }
 
 function nextQuestion(e){
@@ -135,7 +127,6 @@ function nextQuestion(e){
         e.style.display = "none";
         submitBtn.style.display = "inline-block"
     }
-    console.log(score)
     }
 }
 
@@ -149,49 +140,9 @@ function submitQuiz(){
     }
     if(tempChecked == 4){
         alert("Please select an option");
-    } else window.location.href = "result.html";
-}
-
-var loader = document.getElementById("loader");
-var checking = document.getElementById("checking");
-
-var actualResult = document.getElementById("actualResult");
-
-var startAnimation;
-var stopAnimation;
-
-function checkAnimation(){
-    actualResult.style.display = "none";
-    //Animation Function
-    function checkingAnimation(){
-        loader.style.display = "block";
-        checking.style.display = "block"
-        checking.innerHTML += "."
+    } else {
+        checkAnswer(currentQN-1);
+        localStorage.setItem("scoreLocalStorage", score);
+        window.location.href = "result.html";
     }
-
-    //Start Animation
-    startAnimation = setInterval(checkingAnimation, 1000)
-    
-    //Calling Show Result Function
-    stopAnimation = setTimeout(showActualResult, 5000)
-}
-
-function showActualResult(){
-    //Stop Animation
-    clearInterval(startAnimation);
-    
-    //Remove the checking animation
-    loader.style.display = "none";
-    checking.style.display = "none";
-
-    //Display actual result
-    var resultName = document.getElementById("resultName")
-    var resultScore = document.getElementById("resultScore")
-
-    resultScore.innerHTML = getScore();
-    resultName.innerHTML = name;
-    console.log(getScore());
-
-    actualResult.style.display = "block";
-    clearTimeout(stopAnimation);
 }
